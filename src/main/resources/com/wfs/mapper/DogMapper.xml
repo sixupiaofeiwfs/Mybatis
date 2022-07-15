@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+
+<!--第一种方式-->
+<!--<mapper namespace="com.wfs.pojo.DogMapper">-->
+<!--<select id="selectDog" resultType="com.wfs.pojo.Dog">-->
+<!--select * from dog where id = #{id}-->
+<!--</select>-->
+<!--</mapper>-->
+
+<!--第二种方式-->
+<mapper namespace="com.wfs.mapper.DogMapper">
+    <select id="selectDog" resultType="com.wfs.pojo.Dog">
+        select * from dog where id = #{id}
+    </select>
+
+    <insert id="insertDog">
+        INSERT INTO `dog`.`dog` (`id`, `name`)
+         VALUES (#{id},#{name});
+    </insert>
+
+
+    <update id="updateDog">
+        UPDATE dog
+        SET name=#{name}
+        WHERE id=#{id}
+    </update>
+
+
+    <delete id="deleteDog">
+        delete from dog where id=#{id}
+    </delete>
+</mapper>
+
+<!--第三种 方式-->
+<!--<mapper namespace="com.wfs.mapper.DogMapper"></mapper>-->
+
